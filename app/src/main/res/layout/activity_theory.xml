@@ -7,4 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".TheoryActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/layoutTheoryTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="136dp"></LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
