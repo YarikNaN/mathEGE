@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "365402044556",
+    "project_id": "mathege-2d008",
+    "storage_bucket": "mathege-2d008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365402044556:android:5ac5ba4d5cfda6b7a223a9",
+        "android_client_info": {
+          "package_name": "com.dragikgames.mathege"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365402044556-of5ocp8tfcp6m4j1nsqtk5fqndu0hfd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS7ei0KEQL7IvOsd0oclWf_tbcxNLdIm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365402044556-of5ocp8tfcp6m4j1nsqtk5fqndu0hfd0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
