@@ -30,7 +30,7 @@ public class TheoryActivity extends AppCompatActivity {
 
         // Создаем кнопки для каждой задачи
         LinearLayout layout = findViewById(R.id.layoutTheoryTest);
-        for (int i = 0; i < 3 && i < taskThemes.size(); i++) {
+        for (int i = 0; i < 5 && i < taskThemes.size(); i++) {
             Button button = new Button(this);
             Pair<Integer, String> taskTheme = taskThemes.get(i);
             button.setText(taskTheme.second);

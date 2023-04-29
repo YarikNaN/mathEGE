@@ -152,6 +152,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+    public List<Pair<Integer, String>> getTaskButtons(int taskThemeId) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {"TaskId", "TaskName"};
+        String selection = "TaskThemeId=?";
+        String[] selectionArgs = {String.valueOf(taskThemeId)};
+        Cursor cursor = db.query("Tasks", projection, selection, selectionArgs, null, null, null);
+        List<Pair<Integer, String>> taskButtons = new ArrayList<>();
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                int idIndex = cursor.getColumnIndexOrThrow("TaskId");
+                int id = cursor.getInt(idIndex);
+                int taskNameIndex = cursor.getColumnIndexOrThrow("TaskName");
+                String taskName = cursor.getString(taskNameIndex);
+                taskButtons.add(new Pair<>(id, taskName));
+            } while (cursor.moveToNext());
+        }
+        if (cursor != null) {
+            cursor.close();
+        }
+        return taskButtons;
+    }
 
 
 
