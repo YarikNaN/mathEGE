@@ -2,6 +2,7 @@ package com.dragikgames.mathege;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -105,6 +106,18 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(TaskDetailsActivity.this, "Неверно!", Toast.LENGTH_SHORT).show();
                 }
+
+
+                ContentValues values = new ContentValues();
+                values.put("UserText", userAnswer);
+                int count = db.update("Tasks", values, selection, selectionArgs);
+                if (count > 0) {
+                    Toast.makeText(TaskDetailsActivity.this, "Ответ сохранен!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(TaskDetailsActivity.this, "Ошибка сохранения ответа!", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
