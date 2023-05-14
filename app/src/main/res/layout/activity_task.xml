@@ -13,7 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="136dp"></LinearLayout>
+        tools:layout_editor_absoluteY="136dp">
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
