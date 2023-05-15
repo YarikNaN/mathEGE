@@ -37,7 +37,9 @@ public class TheoryActivity extends AppCompatActivity {
             Pair<Integer, String> taskTheme = taskThemes.get(i);
             button.setText(taskTheme.second);
 
-            button.setBackgroundColor(Color.rgb(255, 165, 0));
+//            button.setBackgroundColor(Color.rgb(255, 165, 0));
+
+            button.setBackground(getResources().getDrawable(R.drawable.rounded_button_background));;
             int width = getResources().getDisplayMetrics().widthPixels;
             int buttonWidth = (int) (width * 0.8);
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
