@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static String DB_NAME = "EGEmath.db";
+    private static String DB_NAME = "EGE_math.db";
     private static String DB_PATH = "";
     private static final int DB_VERSION = 1;
 

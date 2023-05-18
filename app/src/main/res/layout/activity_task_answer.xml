@@ -19,9 +19,9 @@
         android:id="@+id/answer_image"
         android:layout_width="208dp"
         android:layout_height="185dp"
-        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_description"
+        app:layout_constraintTop_toBottomOf="@+id/task_answer"
         tools:src="@drawable/trapetsia" />
 </androidx.constraintlayout.widget.ConstraintLayout>

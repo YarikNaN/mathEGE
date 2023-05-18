@@ -73,6 +73,9 @@ public class TaskActivity extends AppCompatActivity {
                 }
             });
             layout.addView(button);
+            LinearLayout.LayoutParams layoutParams1 = (LinearLayout.LayoutParams) button.getLayoutParams();
+// Устанавливаем отступ снизу на 16dp
+            layoutParams1.setMargins(0, 26, 0, 0 );
         }
     }
 }
