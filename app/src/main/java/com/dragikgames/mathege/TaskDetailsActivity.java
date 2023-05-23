@@ -17,9 +17,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class TaskDetailsActivity extends AppCompatActivity {
     private EditText answerEditText;
     private Button checkAnswerButton;
+    private DatabaseReference mDatabase;
+    private int taskId;
+    private int userAnswer;
+
+    //Снизу тест
+    private String userId="Саня";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +38,12 @@ public class TaskDetailsActivity extends AppCompatActivity {
         answerEditText = findViewById(R.id.answer_edit_text);
         checkAnswerButton = findViewById(R.id.check_answer_button);
 
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
         // Получаем параметры из Intent
-        int taskId = getIntent().getIntExtra("id", 0);
+         taskId = getIntent().getIntExtra("id", 0);
 
         // Получаем данные задачи из базы данных
         DatabaseHelper dbHelper = new DatabaseHelper(this);
@@ -69,10 +83,13 @@ public class TaskDetailsActivity extends AppCompatActivity {
         }
 
 
+
+
+
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int userAnswer = 0;
+                 userAnswer = 0;
                 try {
                     userAnswer = Integer.parseInt(answerEditText.getText().toString());
                 } catch (NumberFormatException e) {
@@ -81,7 +98,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 }
 
                 // Получаем параметры из Intent
-                int taskId = getIntent().getIntExtra("id", 0);
+                 taskId = getIntent().getIntExtra("id", 0);
 
                 // Получаем данные задачи из базы данных
                 DatabaseHelper dbHelper = new DatabaseHelper(TaskDetailsActivity.this);
@@ -112,13 +129,13 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 ContentValues values = new ContentValues();
                 values.put("UserText", userAnswer);
                 int count = db.update("Tasks", values, selection, selectionArgs);
-                if (count > 0) {
+              /*  if (count > 0) {
                     Toast.makeText(TaskDetailsActivity.this, "Ответ сохранен!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(TaskDetailsActivity.this, "Ошибка сохранения ответа!", Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
-
+                writeNewUser();
             }
         });
 
@@ -146,5 +163,14 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+
+    public void writeNewUser() {
+        User user = new User(1,taskId,userAnswer);
+
+
+        mDatabase.child("users").child(userId).setValue(user);
     }
 }

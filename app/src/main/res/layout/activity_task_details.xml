@@ -47,8 +47,8 @@
 
     <EditText
         android:id="@+id/answer_edit_text"
-        android:layout_width="320dp"
-        android:layout_height="55dp"
+        android:layout_width="291dp"
+        android:layout_height="54dp"
         android:layout_marginBottom="64dp"
         android:hint="Введите ответ"
         app:layout_constraintBottom_toBottomOf="parent"
