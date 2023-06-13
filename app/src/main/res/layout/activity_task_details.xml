@@ -37,9 +37,9 @@
 
     <ImageView
         android:id="@+id/task_image"
-        android:layout_width="208dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="389dp"
+        android:layout_height="314dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_description"

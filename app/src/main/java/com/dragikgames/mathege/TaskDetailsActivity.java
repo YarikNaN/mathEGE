@@ -26,9 +26,10 @@ public class TaskDetailsActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private int taskId;
     private int userAnswer;
+    String taskIdString;
 
     //Снизу тест
-    private String userId="Саня";
+    private String userId="Егор";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
                 // Получаем параметры из Intent
                  taskId = getIntent().getIntExtra("id", 0);
+                 taskIdString = String.valueOf(taskId);
 
                 // Получаем данные задачи из базы данных
                 DatabaseHelper dbHelper = new DatabaseHelper(TaskDetailsActivity.this);
@@ -115,7 +117,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
                     cursor.close();
                 }
 
-
                 Log.d("TaskDetailsActivity", "userAnswer = " + userAnswer);
                 Log.d("TaskDetailsActivity", "rightAnswer = " + rightAnswer);
                 // Сравниваем ответ пользователя и правильный ответ
@@ -124,7 +125,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(TaskDetailsActivity.this, "Неверно!", Toast.LENGTH_SHORT).show();
                 }
-
 
                 ContentValues values = new ContentValues();
                 values.put("UserText", userAnswer);
@@ -141,8 +141,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
 
 
-
-
         TextView myTextView = findViewById(R.id.bottom_text_view);
         myTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,24 +151,12 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
-
-
-
     }
-
 
     public void writeNewUser() {
         User user = new User(1,taskId,userAnswer);
 
 
-        mDatabase.child("users").child(userId).setValue(user);
+        mDatabase.child("users").child(userId).child(taskIdString).setValue(user);
     }
 }

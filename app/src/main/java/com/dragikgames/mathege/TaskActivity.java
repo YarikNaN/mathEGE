@@ -50,7 +50,7 @@ public class TaskActivity extends AppCompatActivity {
         for (Pair<Integer, String> taskButton : taskButtons) {
             Button button = new Button(this);
             button.setText(taskButton.second);
-//            button.setBackgroundColor(Color.rgb(255, 165, 0));
+
 
 
             button.setBackground(getResources().getDrawable(R.drawable.rounded_button_background));;

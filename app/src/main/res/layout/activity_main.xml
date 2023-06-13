@@ -6,56 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/b_Theory"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="116dp"
+        android:text="Теория"
+        android:textSize="25sp"
+
+
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="345dp"
         android:layout_height="287dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
 
 
         android:text="@string/math1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/b_Theory"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:textSize="25sp"
-        android:layout_marginTop="100dp"
-        android:text="Теория"
-
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/b_Practice"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="64dp"
         android:text="Практика"
         android:textSize="25sp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_Theory" />
 
-    <Button
-        android:id="@+id/b_Settings"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="72dp"
-        android:text="Настройки"
-        android:textSize="25sp"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+
+    <ImageView
+        android:id="@+id/sfulogo"
+        android:layout_width="138dp"
+        android:layout_height="57dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b_Practice" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sfulogo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
