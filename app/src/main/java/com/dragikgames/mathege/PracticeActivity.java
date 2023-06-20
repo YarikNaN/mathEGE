@@ -27,7 +27,7 @@ public class PracticeActivity extends AppCompatActivity {
 
         // Создаем кнопки для каждой задачи
         LinearLayout layout = findViewById(R.id.layoutTheoryTest);
-        for (int i = 0; i < 4 && i < taskThemes.size(); i++) {
+        for (int i = 0; i < 6 && i < taskThemes.size(); i++) {
             Button button = new Button(this);
             Pair<Integer, String> taskTheme = taskThemes.get(i);
             button.setText(taskTheme.second);
@@ -42,6 +42,11 @@ public class PracticeActivity extends AppCompatActivity {
 
 
             button.setLayoutParams(layoutParams);
+            int paddingLeft = 0;
+            int paddingTop = 30;
+            int paddingRight = 0;
+            int paddingBottom = 0;
+            button.setPaddingRelative(paddingLeft, paddingTop, paddingRight, paddingBottom);
 
 
 
